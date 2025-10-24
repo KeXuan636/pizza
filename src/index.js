@@ -1,8 +1,70 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+function App() {
+  return (
+    <div>
+      <h1>K.X Pizza</h1>
+      <h2>Our Menu</h2>
+      
+      <div>
+        <Pizza
+          name="Focaccia"
+          ingredients="Tomato, mozzarella, basil"
+          photoName="pizzas/focaccia.jpg"
+          price={10}
+        />
+        <br />
+        <Pizza
+          name="Funghi"
+          ingredients="Tomato, cheese, mushrooms"
+          photoName="pizzas/funghi.jpg"
+          price={12}
+        />
+        <br />
+        <Pizza
+          name="Margherita"
+          ingredients="Tomato, cheese, bell peppers, olives, onions"
+          photoName="pizzas/margherita.jpg"
+          price={11}
+        />
+        <br />
+        <Pizza
+          name="Prosciutto"
+          ingredients="Tomato, mozzarella, basil"
+          photoName="pizzas/prosciutto.jpg"
+          price={10}
+        />
+        <br />
+        <Pizza
+          name="Salamino"
+          ingredients="Tomato, cheese, salami"
+          photoName="pizzas/salamino.jpg"
+          price={12}
+        />
+        <br />
+        <Pizza
+          name="Spinaci"
+          ingredients="Tomato, cheese, spinach"
+          photoName="pizzas/spinaci.jpg"
+          price={11}
+        />
+      </div>
+    </div>
+  );
+}
+
+function Pizza({ name, ingredients, photoName, price }) {
+  return (
+    <div className="pizza">
+      <img src={photoName} alt={name} />
+      <h3>{name}</h3>
+      <p>{ingredients}</p>
+      <span>${price}</span>
+    </div>
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -10,8 +72,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
