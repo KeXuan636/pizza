@@ -4,8 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
 
 function Header() {
-  const hour = new Date().getHours();
-  const isOpen = hour >= 10 && hour < 22;
 
   const headerStyle = {
     color: '#ba5e5eff',
@@ -21,7 +19,6 @@ function Header() {
   return (
     <header style={{ textAlign: 'center' }}>
       <h1 style={headerStyle}>K.X Pizza</h1>
-      {isOpen && <p className="tagline">Authentic Italian Cuisine 🍕</p>}
     </header>
   );
 }
@@ -86,13 +83,8 @@ function Menu() {
 
       <div className="open-time">
         <div className="open-hours">
-          <h3>Open</h3>
-          <p>10:00AM</p>
-        </div>
-        <div className="divider"></div>
-        <div className="close-hours">
-          <h3>Close</h3>
-          <p>10:00PM</p>
+          <h3>Open Hours</h3>
+          <p>10:00AM - 10:00PM</p>
         </div>
       </div>
 
@@ -137,14 +129,14 @@ function Order() {
 
 function Footer() {
   const hour = new Date().getHours();
-  const isOpen = hour >= 10 && hour < 24;
+  const isOpen = hour >= 10 && hour < 22;
 
   return (
     <footer className="footer">
       {isOpen ? (
         <Order />
       ) : (
-        <p>Sorry, we're closed. Come back between 10AM - 10PM.</p>
+        <p>Sorry, we're closed.</p>
       )}
     </footer>
   );
@@ -168,3 +160,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// https://pizza-lilac-psi.vercel.app/

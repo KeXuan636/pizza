@@ -17,18 +17,11 @@ body {
   margin-bottom: 40px;
 }
 
-.open-hours , .close-hours {
+.open-hours {
   text-align: center;
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 18px;
   color: rgb(149, 24, 24);
-}
-
-.divider {
-  width: 1px;
-  height: 60px;
-  background-color: rgba(149, 24, 24, 0.682);
-  margin: 0 10px;
 }
 
 .menu {
